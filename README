@@ -1,0 +1,28 @@
+
+
+Linux Collection Script
+-----------------------
+
+This Script will collect the following data from Linux servers
+
+Name
+CPUs 
+Cores 
+Network Cards  
+Open Network Ports
+Disks
+
+
+Syntax: iv.sh [username]
+
+Assumptions: 
+---------------------
+- Authentication keys are available for password-less SSH login
+- Hosts are Linux Only
+- Hosts IP's are available on the ips.txt file
+
+
+
+
+
+

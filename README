@@ -23,9 +23,10 @@ Syntax: iv.sh [username]
 The Output will be displyed on the screen as well as in files on the `output` folder
 In the `output` folder, each server will have it's own file stating the server ip and a timestamp
 
-
 Assumptions:
 ---------------------
 - Authentication keys are available for password-less SSH login
 - Hosts are Linux Only
 - Hosts IP's are available on the ips.txt file
+
+*** Running collect.sh will grab and display data from your local machine

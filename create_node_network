@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#$1 = mgmt ip for ssh
+#$2 = last digit of data ip
+#$3 = interface name
+
+if [ "$1" != "" ] ; then
+	ssh root@$1 "cat <<EOT >/etc/sysconfig/network-scripts/ifcfg-$3
+	DEVICE="$3"
+	BOOTPROTO="static"
+	IPADDR="$2"
+	NETMASK="255.255.255.224"
+	ONBOOT="yes"
+	TYPE="Ethernet" 
+EOT"
+	ssh root@$1 "ifdown $3 && ifup $3"
+else 
+	echo "Syntax: "
+	echo "-------------------"
+	echo "create_node_network.sh  [mgmt ip for ssh] [data ip] [interface name]"
+	echo "example: ./create_node_network.sh 192.168.1.1 200.100.1.1 ens1"
+fi
+
